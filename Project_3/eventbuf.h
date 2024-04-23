@@ -46,5 +46,6 @@ void eventbuf_free(struct eventbuf *eb);
 int eventbuf_add(struct eventbuf *eb, int val);
 int eventbuf_get(struct eventbuf *eb);
 int eventbuf_empty(struct eventbuf *eb);
+void eventbuf_print(struct eventbuf *eb);
 
 #endif

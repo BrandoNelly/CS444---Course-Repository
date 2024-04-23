@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "eventbuf.h"
 
@@ -60,3 +61,18 @@ int eventbuf_empty(struct eventbuf *eb)
     return eb->head == NULL;
 }
 
+void eventbuf_print(struct eventbuf *eb)
+{
+    struct eventbuf_node *cur = eb->head;
+
+    while (cur) {
+        printf("%d", cur->event);
+
+        if (cur->next)
+            printf(" -> ");
+
+        cur = cur->next;
+    }
+
+    putchar('\n');
+}
